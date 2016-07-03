@@ -92,7 +92,6 @@ public abstract class Yql {
 
     public <T extends Serializable> void query(final String yql, final Callback<Result<T>> callback) {
         final HttpUrl url = HttpUrl.parse(API).newBuilder().addQueryParameter("q", yql).addQueryParameter("format", "json").build();
-        System.out.println(url);
         final Request request = new Request.Builder().url(url).build();
         this.client.newCall(request).enqueue(new okhttp3.Callback() {
             public void onFailure(final Call call, final IOException e) {
