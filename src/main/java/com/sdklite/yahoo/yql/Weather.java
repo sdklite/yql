@@ -231,6 +231,9 @@ public interface Weather {
         @SerializedName("forecast")
         private List<Condition> forecasts;
 
+        @SerializedName("description")
+        private String description;
+
         public String getTitle() {
             return title;
         }
