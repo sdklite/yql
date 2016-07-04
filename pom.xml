@@ -4,7 +4,7 @@
 
   <groupId>com.sdklite.yql</groupId>
   <artifactId>yql</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>yql</name>
