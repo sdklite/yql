@@ -19,7 +19,7 @@ public interface Weather {
         private Channel channel;
 
         public Channel getChannel() {
-            return channel;
+            return this.channel;
         }
 
         @Override
@@ -57,43 +57,54 @@ public interface Weather {
         @SerializedName("atmosphere")
         private Atmosphere atmosphere;
 
+        @SerializedName("astronomy")
+        private Astronomy astronomy;
+
         @SerializedName("item")
         private Conditions conditions;
 
         public Units getUnits() {
-            return units;
+            return this.units;
         }
 
         public String getTitle() {
-            return title;
+            return this.title;
         }
 
         public String getLink() {
-            return link;
+            return this.link;
         }
 
         public String getLanguage() {
-            return language;
+            return this.language;
         }
 
         public long getTtl() {
-            return ttl;
+            return this.ttl;
         }
 
         public Location getLocation() {
-            return location;
+            return this.location;
         }
 
         public Wind getWind() {
-            return wind;
+            return this.wind;
         }
 
         public Atmosphere getAtmosphere() {
-            return atmosphere;
+            return this.atmosphere;
         }
 
         public Conditions getConditions() {
-            return conditions;
+            return this.conditions;
+        }
+
+        public Astronomy getAstronomy() {
+            return this.astronomy;
+        }
+
+        public void setAstronomy(Astronomy astronomy) {
+            this.astronomy = astronomy;
         }
 
         @Override
@@ -119,19 +130,19 @@ public interface Weather {
         private String temperature;
 
         public String getDistance() {
-            return distance;
+            return this.distance;
         }
 
         public String getPressure() {
-            return pressure;
+            return this.pressure;
         }
 
         public String getSpeed() {
-            return speed;
+            return this.speed;
         }
 
         public String getTemperature() {
-            return temperature;
+            return this.temperature;
         }
 
         @Override
@@ -154,15 +165,15 @@ public interface Weather {
         private String region;
 
         public String getCity() {
-            return city;
+            return this.city;
         }
 
         public String getCountry() {
-            return country;
+            return this.country;
         }
 
         public String getRegion() {
-            return region;
+            return this.region;
         }
 
         @Override
@@ -185,15 +196,15 @@ public interface Weather {
         private double speed;
 
         public double getChill() {
-            return chill;
+            return this.chill;
         }
 
         public double getDirection() {
-            return direction;
+            return this.direction;
         }
 
         public double getSpeed() {
-            return speed;
+            return this.speed;
         }
 
         @Override
@@ -219,25 +230,45 @@ public interface Weather {
         private double visibility;
 
         public double getHumidity() {
-            return humidity;
+            return this.humidity;
         }
 
         public double getPressure() {
-            return pressure;
+            return this.pressure;
         }
 
         public double getRising() {
-            return rising;
+            return this.rising;
         }
 
         public double getVisibility() {
-            return visibility;
+            return this.visibility;
         }
 
         @Override
         public String toString() {
             return new Gson().toJson(this);
         }
+    }
+
+    public static class Astronomy implements Serializable {
+
+        private static final long serialVersionUID = -4907053599305938039L;
+
+        @SerializedName("sunrise")
+        private String sunrise;
+
+        @SerializedName("sunset")
+        private String sunset;
+
+        public String getSunrise() {
+            return this.sunrise;
+        }
+
+        public String getSunset() {
+            return this.sunset;
+        }
+
     }
 
     public static class Conditions implements Serializable {
@@ -263,23 +294,23 @@ public interface Weather {
         private String description;
 
         public String getTitle() {
-            return title;
+            return this.title;
         }
 
         public double getLatitude() {
-            return latitude;
+            return this.latitude;
         }
 
         public double getLongitude() {
-            return longitude;
+            return this.longitude;
         }
 
         public Condition getCondition() {
-            return condition;
+            return this.condition;
         }
 
         public List<Condition> getForecasts() {
-            return forecasts;
+            return this.forecasts;
         }
 
         @Override
@@ -317,7 +348,7 @@ public interface Weather {
         private String text;
 
         public int getCode() {
-            return code;
+            return this.code;
         }
 
         public String getDate() {
@@ -325,23 +356,23 @@ public interface Weather {
         }
 
         public double getTemperature() {
-            return temperature;
+            return this.temperature;
         }
 
         public String getText() {
-            return text;
+            return this.text;
         }
 
         public String getDay() {
-            return day;
+            return this.day;
         }
 
         public double getLow() {
-            return low;
+            return this.low;
         }
 
         public double getHigh() {
-            return high;
+            return this.high;
         }
 
         @Override
