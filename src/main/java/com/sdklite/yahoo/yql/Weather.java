@@ -1,11 +1,9 @@
 package com.sdklite.yahoo.yql;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -22,6 +20,11 @@ public interface Weather {
 
         public Channel getChannel() {
             return channel;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
 
     }
@@ -92,6 +95,11 @@ public interface Weather {
         public Conditions getConditions() {
             return conditions;
         }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
     }
 
     public static class Units implements Serializable {
@@ -125,6 +133,11 @@ public interface Weather {
         public String getTemperature() {
             return temperature;
         }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
     }
 
     public static class Location implements Serializable {
@@ -151,6 +164,11 @@ public interface Weather {
         public String getRegion() {
             return region;
         }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
     }
 
     public static class Wind implements Serializable {
@@ -176,6 +194,11 @@ public interface Weather {
 
         public double getSpeed() {
             return speed;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
     }
 
@@ -209,6 +232,11 @@ public interface Weather {
 
         public double getVisibility() {
             return visibility;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
     }
 
@@ -253,6 +281,11 @@ public interface Weather {
         public List<Condition> getForecasts() {
             return forecasts;
         }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
     }
 
     public static class Condition implements Serializable {
@@ -287,12 +320,8 @@ public interface Weather {
             return code;
         }
 
-        public Date getDate() {
-            try {
-                return new SimpleDateFormat(this.date.endsWith("CST") ? "EEE, dd MMM yyyy hh:mm a" : "dd MMM yyyy").parse(this.date);
-            } catch (final ParseException e) {
-                return null;
-            }
+        public String getDate() {
+            return this.date;
         }
 
         public double getTemperature() {
@@ -313,6 +342,11 @@ public interface Weather {
 
         public double getHigh() {
             return high;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
     }
 
