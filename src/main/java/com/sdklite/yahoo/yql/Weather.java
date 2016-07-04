@@ -269,6 +269,11 @@ public interface Weather {
             return this.sunset;
         }
 
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
+
     }
 
     public static class Conditions implements Serializable {
